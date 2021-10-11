@@ -19,7 +19,7 @@ body {
         text-transform: uppercase;
         font-family: 'Raleway', sans-serif;
         font-weight: 600;
-        background-color: rgba(48, 11, 11, 0.747);
+        background-color: rgba(48, 11, 11, 0.836);
         font-size: 17px;
         color: white;
 
@@ -185,7 +185,7 @@ div.container.top {
 }
 
 small {
-    color: #690f0f;
+    color: rgba(0, 128, 0, 0.849);
 }
 
 .header {
@@ -433,7 +433,9 @@ p.desc {
     padding-left: 30px;
 }
 .reg{
-    background-color:rgb(196, 129, 43);
+    background-color:rgba(10,10,10,0.8);
+    color:white;
+    
 }
 
 div.modal-dialog {

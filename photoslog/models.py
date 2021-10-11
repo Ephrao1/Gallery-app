@@ -1,5 +1,7 @@
 from django.db import models
 import datetime as dt
+from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Location(models.Model):
@@ -24,6 +26,12 @@ class Location(models.Model):
         location = Location.objects.get(pk = id)
         return location
 
+class photos(models.Model):
+    # title field
+    title = models.CharField(max_length=100)
+    #image field
+    image = CloudinaryField('image')
+    
 class Category(models.Model):
     name = models.CharField(max_length=50)
     

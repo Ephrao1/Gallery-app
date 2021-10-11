@@ -5,7 +5,7 @@ from . import views
 from django.views.generic import RedirectView
 from django.contrib import admin
 from django.urls import path
-from photos import views
+from photoslog import views
 
 urlpatterns=[
     url('^$', views.index, name='index'),

@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,10 +25,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '#5k9jao^ej7l$4)np0&5v4l^7d_c#uey4!2$t!cjfkrrkej4np'
 
+# adding config
+cloudinary.config(
+cloud_name =	"dyj4zf5he",
+API_Key = "794387149528958",
+API_Secret = "67zyolzBTBByXgow9j2OzoKefio",
+)
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+
+
 
 
 # Application definition
@@ -38,7 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'photoslog.apps.AppConfig',
-    'bootstrap5'
+    'bootstrap5',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse,Http404
 from photoslog.models import Image,Location,Category
+from .models import photos #import photos model
+
 
 
 # Create your views here.
@@ -9,7 +11,12 @@ def index(request):
     locations = Location.objects.all()
     title = 'TefPics'
 
-    return render(request, 'index.html', {'title': title, 'images': images, 'locations': locations})
+     # imports photos and save it in database
+    photo = photos.objects.all()
+    # adding context 
+    ctx = {'photo':photo}
+
+    return render(request, 'index.html', ctx , {'title': title, 'images': images, 'locations': locations})
 
 def single_image(request,category_name,image_id):
     title = 'Image'

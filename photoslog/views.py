@@ -14,9 +14,8 @@ def index(request):
      # imports photos and save it in database
     photo = photos.objects.all()
     # adding context 
-    ctx = {'photo':photo}
 
-    return render(request, 'index.html', ctx , {'title': title, 'images': images, 'locations': locations})
+    return render(request, 'index.html', {'title': title, 'images': images, 'locations': locations})
 
 def single_image(request,category_name,image_id):
     title = 'Image'

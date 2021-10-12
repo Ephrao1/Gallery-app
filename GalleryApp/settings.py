@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 import django_heroku
 import dj_database_url
-from decouple import config,Csv
+from decouple import config, Csv
 
 # cloudinary
 import cloudinary
@@ -33,35 +33,35 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # setup cloudinary credentials for django-cloudinary
 cloudinary.config(
-cloud_name =	"dyj4zf5he",
-API_Key = "794387149528958",
-API_Secret = "67zyolzBTBByXgow9j2OzoKefio",
+    cloud_name="dyj4zf5he",
+    API_Key="794387149528958",
+    API_Secret="67zyolzBTBByXgow9j2OzoKefio",
 )
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-MODE=config("MODE", default="dev")
+MODE = config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', True)
 # development
-if config('MODE')=="dev":
-   DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': 'gallery',
-           'USER': 'ephraim',
-           'PASSWORD': '12345678',
-          
-       }
-       
-   }
+if config('MODE') == "dev":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'gallery',
+            'USER': 'ephraim',
+            'PASSWORD': '12345678',
+
+        }
+
+    }
 # production
 else:
-   DATABASES = {
-       'default': dj_database_url.config(
-           default=config('DATABASE_URL')
-       )
-   }
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL')
+        )
+    }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
@@ -124,7 +124,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gallery',
         'USER': 'ephraim',
-    'PASSWORD':'12345678',
+        'PASSWORD': '12345678',
     }
 }
 

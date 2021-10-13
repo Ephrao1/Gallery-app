@@ -56,7 +56,7 @@ class Category(models.Model):
 class Image(models.Model):
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=300)
-    image = CloudinaryField('image')
+    Image = models.ImageField(upload_to='photos/') 
     Image_location = models.ForeignKey('Location', on_delete=models.CASCADE)
     Image_category = models.ForeignKey('Category', on_delete=models.CASCADE)
 
@@ -98,4 +98,7 @@ class Image(models.Model):
     def __str__(self):
 
         return self.name
+
+   #IMAGE FIELD
+    image = CloudinaryField('image')     
 

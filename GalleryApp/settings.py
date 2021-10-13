@@ -34,8 +34,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # setup cloudinary credentials for django-cloudinary
 cloudinary.config(
     cloud_name="dyj4zf5he",
-    API_Key="794387149528958",
-    API_Secret="67zyolzBTBByXgow9j2OzoKefio",
+    api_key="794387149528958",
+    api_secret="67zyolzBTBByXgow9j2OzoKefio",
 )
 
 
@@ -48,7 +48,7 @@ if config('MODE') == "dev":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'gallery',
+            'NAME': 'gallery2',
             'USER': 'ephraim',
             'PASSWORD': '12345678',
 

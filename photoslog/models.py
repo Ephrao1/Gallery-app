@@ -99,6 +99,5 @@ class Image(models.Model):
 
         return self.name
 
-   #IMAGE FIELD
-    image = CloudinaryField('image')     
+    
 

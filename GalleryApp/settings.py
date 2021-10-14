@@ -48,7 +48,7 @@ if config('MODE') == "dev":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'gallery2',
+            'NAME': 'gallery',
             'USER': 'ephraim',
             'PASSWORD': '12345678',
 
